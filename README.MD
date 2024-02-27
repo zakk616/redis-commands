@@ -4,34 +4,54 @@
 ```javascript
 // install redis
 sudo apt-get install redis-server
+```
 
+```javascript
 // Check redis version
 redis-cli --version
+```
 
+```javascript
 // Connect to redis
 redis-cli
+```
 
+```javascript
 // Start redis
 sudo service redis-server start
+```
 
+```javascript
 // Stop redis
 sudo service redis-serverstop
+```
 
+```javascript
 // Restart redis
 sudo service redis-server restart
+```
 
+```javascript
 // Check redis status
 sudo service redis-server status
+```
 
+```javascript
 // Start redis with config file
 sudo redis-server redis.conf
+```
 
+```javascript
 // Shutdown redis
 redis-cli shutdown
+```
 
+```javascript
 // Check where redis-cli is running
 which redis-cli
+```
 
+```javascript
 // Check where redis is installed
 locate redis.conf
 
@@ -45,10 +65,14 @@ locate redis.conf
 ```javascript
 // Check connection
 PING
+```
 
+```javascript
 // Test message transfer
 ECHO "message"
+```
 
+```javascript
 // list key dictionary 
 KEYS *
 ```
@@ -56,19 +80,29 @@ KEYS *
 ```javascript
 // list keys starting with 
 KEYS a*
+```
 
+```javascript
 // list keys ending with 
 KEYS *z
+```
 
+```javascript
 // list keys starting and ending with 
 KEYS a*z
+```
 
+```javascript
 // list keys with having in middle
 KEYS *xyz*
+```
 
+```javascript
 // Dictionary size
 DBSIZE
+```
 
+```javascript
 // Dictionary info
 INFO keyspace
 ```
@@ -76,24 +110,36 @@ INFO keyspace
 ```javascript
 // create a key 
 SET mykey "mykey value"
+```
 
+```javascript
 // get a key
 GET mykey
+```
 
+```javascript
 // create a key with expiry (EX = seconds, PX = milliseconds)
 SET mykey "mykey value" EX 10
 // or set in seconds
 EXPIRE mykey 10
+```
 
+```javascript
 // check expiry of a key  (-1 = not set, -2 = expired)
 TTL mykey
+```
 
+```javascript
 // check datatype of a key
 TYPE mykey
+```
 
+```javascript
 // check if a key exists (1 = true, 0 = false)
 EXISTS mykey
+```
 
+```javascript
 // delete a key
 DEL mykey
 ```
@@ -105,11 +151,15 @@ DEL mykey
 sudo nano /etc/redis/redis.conf 
 // add 'requirepass 123' in '/etc/redis/redis.conf'
 // restart redis
+```
 
+```javascript
 //Enable LAN
 sudo nano /etc/redis/redis.conf // add 'bind 192.168.1.245' in '/etc/redis/redis.conf'
 // restart redis
+```
 
+```javascript
 //Measure redis command performance in 'PowerShell'
 Measure-Command { redis-cli -h 127.0.0.1 -p 6379 keys * }
 ```
@@ -160,7 +210,7 @@ cp redis.conf 7005/redis.conf
 //create cluster of all these running nodes
 redis-cli --cluster create 127.0.0.1:7000 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005 --cluster-replicas 1
 
-//will ask for confirmation (yes), type `yes` and hit enter
+//it will ask for confirmation (yes), type `yes` and hit enter
 ```
 
 ```js
