@@ -145,23 +145,44 @@ DEL mykey
 ```
 
 
-## Intermediate
+## Intermediate (Redis Configurations)
+
 ```javascript
 //Enable Authentication
 sudo nano /etc/redis/redis.conf 
 // add 'requirepass 123' in '/etc/redis/redis.conf'
-// restart redis
+
+// restart redis required
+sudo service redis-server restart
 ```
 
 ```javascript
-//Enable LAN
+//Enable  Redis on LAN/WAN
 sudo nano /etc/redis/redis.conf // add 'bind 192.168.1.245' in '/etc/redis/redis.conf'
-// restart redis
+
+// restart redis required
+sudo service redis-server restart
 ```
 
 ```javascript
-//Measure redis command performance in 'PowerShell'
+//change default redis port
+sudo nano /etc/redis/redis.conf // change 'port 6379' to 'port 7000'
+
+// restart redis required
+sudo service redis-server restart
+```
+
+```javascript
+//Measure redis command performance On Windows in 'PowerShell'
 Measure-Command { redis-cli -h 127.0.0.1 -p 6379 keys * }
+
+//Measure redis command performance On Linux in 'Terminal'
+time redis-cli -h 127.0.0.1 -p 6379 keys "*"
+```
+
+```javascript
+//redis.service for auto start
+/etc/systemd/system/redis.service
 ```
 
 ## Advanced (Cluster)
@@ -213,12 +234,53 @@ redis-cli --cluster create 127.0.0.1:7000 127.0.0.1:7001 127.0.0.1:7002 127.0.0.
 //it will ask for confirmation (yes), type `yes` and hit enter
 ```
 
-```js
+```javascript
 //connect to the a node in cluster mode
 redis-cli -h 127.0.0.1 -p 7000 -c
 ```
 
-```js
+```javascript
 //check cluster and nodes status
-cluster nodes
+CLUSTER nodes
+```
+
+```javascript
+//check role of the a node in cluster mode
+ROLE
+```
+
+
+#### Redis-Server executable file directory
+```
+└── var
+    └── bin
+        └── redis-server
+```
+
+#### Systemd services
+```
+└── etc
+    └── systemd
+        └── system
+            ├── redis_7000.service
+            └── redis_7001.service
+```
+
+#### Node config files
+```
+└── etc
+    └── redis
+        ├── redis_7000.conf
+        └── redis_7001.conf
+```
+
+#### Log Directories
+```
+└── var
+    └── log
+        └── redis
+            ├── redis-server.log
+            ├── redis-server.log.1.gz
+            ├── redis-server.log.2.gz
+            └── redis-server.log.3.gz
 ```
