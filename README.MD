@@ -7,13 +7,13 @@ sudo apt-get install redis-server
 ```
 
 ```javascript
-// Check redis version
-redis-cli --version
+// Check redis status
+sudo service redis-server status
 ```
 
 ```javascript
-// Connect to redis
-redis-cli
+// Stop redis
+sudo service redis-server stop
 ```
 
 ```javascript
@@ -22,23 +22,23 @@ sudo service redis-server start
 ```
 
 ```javascript
-// Stop redis
-sudo service redis-serverstop
-```
-
-```javascript
 // Restart redis
 sudo service redis-server restart
 ```
 
 ```javascript
-// Check redis status
-sudo service redis-server status
+// Start redis with config file
+sudo redis-server redis.conf
 ```
 
 ```javascript
-// Start redis with config file
-sudo redis-server redis.conf
+// Check redis version
+redis-cli --version
+```
+
+```javascript
+// Connect to redis
+redis-cli
 ```
 
 ```javascript
