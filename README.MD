@@ -98,6 +98,11 @@ KEYS *xyz*
 ```
 
 ```javascript
+// scan keys with name pattern
+SCAN 0 MATCH "KEY*" COUNT 1000
+```
+
+```javascript
 // Dictionary size
 DBSIZE
 ```
