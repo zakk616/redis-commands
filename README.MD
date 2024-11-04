@@ -99,7 +99,7 @@ KEYS *xyz*
 
 ```javascript
 // scan keys with name pattern
-SCAN 0 MATCH "KEY*" COUNT 1000
+redis-cli -c -h <IP> -p <PORT> -a <PASSWROD> SCAN 0 MATCH "KEY*" COUNT 1000000
 ```
 
 ```javascript
