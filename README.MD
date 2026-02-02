@@ -149,6 +149,10 @@ EXISTS mykey
 DEL mykey
 ```
 
+```javascript
+// check list items
+LRANGE key from_index to_index
+```
 
 ## Intermediate (Redis Configurations)
 
