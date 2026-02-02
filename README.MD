@@ -284,8 +284,8 @@ ROLE
 └── var
     └── log
         └── redis
-            ├── redis-server.log
-            ├── redis-server.log.1.gz
-            ├── redis-server.log.2.gz
-            └── redis-server.log.3.gz
+            ├── redis-server_7000.log
+            ├── redis-server_7000.log.1.gz
+            ├── redis-server_7001.log
+            ├── redis-server_7001.log.1.gz
 ```
